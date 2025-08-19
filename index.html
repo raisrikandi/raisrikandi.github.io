@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emping Srikandi – Emping & Keceprek Melinjo Tradisional</title>
+  <meta name="description" content="Produsen emping melinjo tradisional sejak 2001. Emping original, emping balado, dan keceprek melinjo dengan cita rasa autentik." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js untuk interaktivitas ringan (tanpa backend) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'display': ['Playfair Display', 'serif'],
+          },
+          colors: {
+            'primary': {
+              50: '#fef9ec', 100: '#fceecb', 200: '#f9db96', 300: '#f5c258', 400: '#f1a52e',
+              500: '#eb8a17', 600: '#d06811', 700: '#ad4b11', 800: '#8c3b15', 900: '#723215',
+            },
+            'secondary': {
+              50: '#f6f7f9', 100: '#eceef2', 200: '#d5dae2', 300: '#b0bac8', 400: '#8595aa',
+              500: '#677890', 600: '#526076', 700: '#434e60', 800: '#3a4351', 900: '#343a46',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.8); }
+    .hero-pattern { background-image: radial-gradient(#f1a52e12 1px, transparent 1px); background-size: 16px 16px; }
+    .text-balance { text-wrap: balance; }
+  </style>
+</head>
+<body class="bg-stone-50 text-secondary-900" x-data>
+  <!-- Navbar -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="mt-4 rounded-2xl glass shadow-lg border border-white/40">
+        <div class="flex items-center justify-between px-4 py-3">
+          <a href="#home" class="flex items-center gap-2">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary-500 text-white font-bold">SR</span>
+            <div class="leading-tight">
+              <p class="font-extrabold tracking-tight">Emping Srikandi</p>
+              <p class="text-xs text-stone-600">Sejak 2001</p>
+            </div>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#tentang" class="hover:text-primary-600">Tentang</a>
+            <a href="#produk" class="hover:text-primary-600">Produk</a>
+            <a href="#sejarah" class="hover:text-primary-600">Sejarah</a>
+            <a href="#kontak" class="hover:text-primary-600">Kontak</a>
+          </nav>
+          <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border px-3 py-2 text-sm">
+            Menu
+          </button>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t px-4 pb-4">
+          <div class="grid gap-2 pt-2 text-sm font-medium">
+            <a href="#tentang" class="py-2">Tentang</a>
+            <a href="#produk" class="py-2">Produk</a>
+            <a href="#sejarah" class="py-2">Sejarah</a>
+            <a href="#kontak" class="py-2">Kontak</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative pt-40 pb-24 hero-pattern">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary-100 via-white to-stone-50"></div>
+    <div class="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight text-balance">
+          Emping Tradisional<br>Rasa Autentik<br>Nusantara
+        </h1>
+        <p class="mt-4 text-lg text-stone-600 max-w-xl">
+          Emping Srikandi mempertahankan metode tradisional dalam proses produksinya. Biji melinjo disangrai di atas pasir panas, kemudian ditumbuk manual hingga pipih dan dijemur hingga kering.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#produk" class="inline-flex items-center justify-center rounded-2xl bg-primary-600 px-5 py-3 text-white font-semibold shadow hover:bg-primary-700 transition-colors">Lihat Produk</a>
+          <a href="https://wa.me/628986771196" target="_blank" class="inline-flex items-center justify-center rounded-2xl border px-5 py-3 font-semibold hover:border-primary-600 hover:text-primary-700 transition-colors">Hubungi via WhatsApp</a>
+        </div>
+        <div class="mt-8 flex items-center gap-6 text-sm text-stone-600">
+          <div class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Produksi tradisional</div>
+          <div class="flex items-center gap-2"><span class="inline-block h-2 w-2 rounded-full bg-green-500"></span> Bahan baku pilihan</div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+          <img src="img/emping.jpg" alt="Emping keripik" class="h-full w-full object-cover" loading="lazy"/>
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-4 ring-1 ring-black/5">
+          <p class="text-xs text-stone-500">Keunggulan</p>
+          <ul class="text-sm font-semibold mt-1 space-y-1">
+            <li class="flex items-start gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-500 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Proses tradisional</span></li>
+            <li class="flex items-start gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-500 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Rasa autentik</span></li>
+            <li class="flex items-start gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-500 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Tanpa pengawet</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang -->
+  <section id="tentang" class="py-20">
+    <div class="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="order-2 lg:order-1">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight">Emping & Keceprek Melinjo Srikandi</h2>
+        <p class="mt-4 text-stone-600 leading-relaxed">
+          Produk kami hadir dalam beragam rasa dan bentuk penyajian yang berbeda dari emping biasa. Keceprek melinjo merupakan variasi emping yang dihancurkan menjadi potongan kecil, lalu dibalut dengan bumbu pedas gurih.
+        </p>
+        <div class="mt-6 grid sm:grid-cols-3 gap-4 text-center">
+          <div class="rounded-2xl bg-white p-5 shadow ring-1 ring-black/5">
+            <p class="text-3xl font-extrabold text-primary-700">20+</p>
+            <p class="text-xs text-stone-500">Tahun pengalaman</p>
+          </div>
+          <div class="rounded-2xl bg-white p-5 shadow ring-1 ring-black/5">
+            <p class="text-3xl font-extrabold text-primary-700">3+</p>
+            <p class="text-xs text-stone-500">Provinsi jangkauan</p>
+          </div>
+          <div class="rounded-2xl bg-white p-5 shadow ring-1 ring-black/5">
+            <p class="text-3xl font-extrabold text-primary-700">3</p>
+            <p class="text-xs text-stone-500">Varian produk</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+          <img src="img/proses.jpg" alt="Proses pembuatan emping" class="h-full w-full object-cover" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="produk" class="py-20 bg-white" x-data="shop()">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight">Produk Kami</h2>
+        <p class="mt-2 text-stone-600">Emping dan keceprek melinjo dengan cita rasa autentik dari Cikedal, Pandeglang</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <article class="group rounded-2xl bg-stone-50 p-4 shadow-lg ring-1 ring-black/5 hover:ring-primary-300 transition-all">
+          <div class="aspect-[4/3] overflow-hidden rounded-xl relative">
+            <img src="img/original.jpg" alt="Emping original" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <span class="absolute top-3 right-3 bg-primary-100 text-primary-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">BESTSELLER</span>
+          </div>
+          <h3 class="mt-4 text-xl font-bold text-primary-900">Emping Original</h3>
+          <p class="text-sm text-stone-600 mt-2">Emping melinjo murni tanpa tambahan bumbu, memberikan rasa gurih alami dan aroma khas melinjo yang autentik.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-lg font-bold text-primary-700">Rp55.000/kg</span>
+            <button @click="openModal('Emping Original', 55000)" class="inline-flex items-center justify-center rounded-xl bg-primary-600 px-4 py-2 text-sm text-white font-medium hover:bg-primary-700 transition-colors">Beli via WA</button>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="group rounded-2xl bg-stone-50 p-4 shadow-lg ring-1 ring-black/5 hover:ring-primary-300 transition-all">
+          <div class="aspect-[4/3] overflow-hidden rounded-xl">
+            <img src="img/balado.jpg" alt="Emping balado" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <h3 class="mt-4 text-xl font-bold text-primary-900">Emping Balado</h3>
+          <p class="text-sm text-stone-600 mt-2">Menghadirkan perpaduan gurih emping melinjo dengan sensasi pedas-manis khas bumbu balado.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-lg font-bold text-primary-700">Rp55.000/kg</span>
+            <button @click="openModal('Emping Balado', 55000)" class="inline-flex items-center justify-center rounded-xl bg-primary-600 px-4 py-2 text-sm text-white font-medium hover:bg-primary-700 transition-colors">Beli via WA</button>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="group rounded-2xl bg-stone-50 p-4 shadow-lg ring-1 ring-black/5 hover:ring-primary-300 transition-all">
+          <div class="aspect-[4/3] overflow-hidden rounded-xl">
+            <img src="img/keceprek.jpeg" alt="Keceprek melinjo" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+          </div>
+          <h3 class="mt-4 text-xl font-bold text-primary-900">Keceprek Melinjo</h3>
+          <p class="text-sm text-stone-600 mt-2">Variasi emping yang dihancurkan menjadi potongan kecil, lalu dibalut dengan bumbu pedas gurih.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-lg font-bold text-primary-700">Rp75.000/kg</span>
+            <button @click="openModal('Keceprek Melinjo', 75000)" class="inline-flex items-center justify-center rounded-xl bg-primary-600 px-4 py-2 text-sm text-white font-medium hover:bg-primary-700 transition-colors">Beli via WA</button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Modal Marketplace -->
+      <div x-show="open" x-transition.opacity class="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 p-4" style="display:none">
+        <div @click.outside="open=false" class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl ring-1 ring-black/10">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-xl font-bold text-secondary-900">Pesan <span x-text="product"></span></h3>
+              <p class="text-sm text-stone-500 mt-1">Estimasi harga belum termasuk ongkos kirim.</p>
+            </div>
+            <button @click="open=false" class="rounded-xl border px-2 py-1 text-sm">Tutup</button>
+          </div>
+
+          <div class="mt-4 grid gap-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="text-sm font-semibold">Harga Satuan</label>
+                <input type="text" :value="formatIDR(price) + '/kg'" readonly class="mt-1 w-full rounded-xl border px-3 py-2 bg-stone-50" />
+              </div>
+              <div>
+                <label class="text-sm font-semibold">Jumlah (kg)</label>
+                <input type="number" min="1" step="0.5" x-model.number="qty" @input="recalc()" class="mt-1 w-full rounded-xl border px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="cth: 2" />
+              </div>
+            </div>
+            <div>
+              <label class="text-sm font-semibold">Catatan (opsional)</label>
+              <input type="text" x-model="note" class="mt-1 w-full rounded-xl border px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Level pedas, kemasan, dll." />
+            </div>
+            <div class="rounded-xl bg-primary-50 p-4 border border-primary-200">
+              <div class="flex items-center justify-between text-sm">
+                <span class="font-semibold">Estimasi Total</span>
+                <span class="font-bold text-primary-800" x-text="formatIDR(total)"></span>
+              </div>
+              <p class="text-xs text-primary-900 mt-1">*Belum termasuk ongkos kirim.</p>
+            </div>
+            <button @click="checkout()" class="rounded-2xl bg-primary-600 px-5 py-3 text-white font-semibold hover:bg-primary-700 transition-colors">Lanjutkan ke WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sejarah -->
+  <section id="sejarah" class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight">Sejarah Singkat</h2>
+          <p class="mt-4 text-stone-600 leading-relaxed">
+            Berdiri kokoh di Kampung Tegallega, menjadi penanda semangat wirausaha lokal yang telah bertahan sejak tahun 2001. Emping Srikandi & Keceprek Melinjo RAI Srikandi, milik Wiwin, warga Kampung Tegallega, Desa Karya Utama, Kecamatan Cikedal, Kabupaten Pandeglang, telah eksis sejak tahun 2001 dan menjadi simbol ketahanan usaha tradisional di wilayahnya.
+          </p>
+          <div class="mt-6 rounded-2xl bg-primary-50 p-6 border border-primary-200">
+            <h3 class="font-bold text-primary-800">Pencapaian Kami</h3>
+            <p class="text-sm text-primary-900 mt-2">Produk-produk kami telah menembus pasar tidak hanya di Pandeglang, tapi juga ke Jakarta, Tangerang, bahkan Lampung.</p>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/5">
+            <img src="img/background.jpeg" alt="Proses tradisional pembuatan emping" class="h-full w-full object-cover" loading="lazy"/>
+          </div>
+          <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg p-4 ring-1 ring-black/5">
+            <p class="text-xs text-stone-500">Filosofi Kami</p>
+            <p class="text-sm font-semibold mt-1">"Mempertahankan tradisi,<br>menjaga kualitas"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section class="py-20 bg-primary-50">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight">Testimoni Pelanggan</h2>
+        <p class="mt-2 text-stone-600">Apa kata mereka tentang produk kami</p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <blockquote class="rounded-2xl bg-white p-6 shadow ring-1 ring-black/5 hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-2 text-yellow-400 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+          </div>
+          <p class="text-stone-700">"Emping originalnya benar-benar terasa gurih alami, tidak seperti produk lain yang kadang terasa minyak gorengnya. Keluarga saya selalu stok emping dari Srikandi."</p>
+          <footer class="mt-4 flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-800 font-bold">A</div>
+            <div>
+              <p class="text-sm font-semibold">Andini W.</p>
+              <p class="text-xs text-stone-500">Pelanggan dari Jakarta</p>
+            </div>
+          </footer>
+        </blockquote>
+        <blockquote class="rounded-2xl bg-white p-6 shadow ring-1 ring-black/5 hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-2 text-yellow-400 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+          </div>
+          <p class="text-stone-700">"Keceprek melinjo nya jadi favorit anak-anak. Pedasnya pas, gurih, dan renyah. Sudah langganan 3 tahun untuk oleh-oleh khas Pandeglang."</p>
+          <footer class="mt-4 flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-800 font-bold">B</div>
+            <div>
+              <p class="text-sm font-semibold">Budi S.</p>
+              <p class="text-xs text-stone-500">Pemilik Toko Oleh-oleh</p>
+            </div>
+          </footer>
+        </blockquote>
+        <blockquote class="rounded-2xl bg-white p-6 shadow ring-1 ring-black/5 hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-2 text-yellow-400 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-
+755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+          </div>
+          <p class="text-stone-700">"Emping balado nya selalu habis duluan di warung saya. Pelanggan suka dengan pedas-manisnya yang khas. Pengiriman juga selalu tepat waktu."</p>
+          <footer class="mt-4 flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-800 font-bold">D</div>
+            <div>
+              <p class="text-sm font-semibold">Dewi R.</p>
+              <p class="text-xs text-stone-500">Pemilik Warung Makan</p>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="rounded-3xl bg-gradient-to-r from-primary-600 to-primary-500 p-10 text-white shadow-xl">
+        <div class="grid lg:grid-cols-2 gap-6 items-center">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-display font-bold tracking-tight">Selamat Menikmati Emping asli Cikedal</h3>
+            <p class="mt-2 text-white/90">Pesan sekarang dan rasakan keautentikan emping tradisional kami</p>
+          </div>
+          <div class="flex gap-3 lg:justify-end">
+            <a href="mailto:empingSrikandi@gmail.com" class="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 font-semibold text-primary-700 hover:bg-primary-50 transition-colors">Email Kami</a>
+            <a href="https://wa.me/628986771196" target="_blank" class="inline-flex items-center justify-center rounded-2xl border border-white/60 px-5 py-3 font-semibold hover:bg-white/10 transition-colors">Chat WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak" class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight">Hubungi Kami</h2>
+        <p class="mt-2 text-stone-600">Untuk pemesanan dan informasi lebih lanjut</p>
+        <div class="mt-6 space-y-4 text-sm">
+          <p class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg><span><strong>Alamat:</strong> Kp. Tegallega RT 007 RW 003 Desa Karya Utama Kec. Cikedal Kab. Pandeglang</span></p>
+          <p class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg><span><strong>Telepon/WA:</strong> <a class="underline" href="https://wa.me/628986771196" target="_blank">0898-6771-196</a></span></p>
+          <p class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg><span><strong>Email:</strong> <a class="underline" href="mailto:empingSrikandi@gmail.com">empingSrikandi@gmail.com</a></span></p>
+        </div>
+      </div>
+      <div>
+        <form class="rounded-2xl bg-stone-50 p-6 shadow ring-1 ring-black/5" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim.'); this.reset();">
+          <div class="grid gap-4">
+            <div>
+              <label class="text-sm font-semibold">Nama</label>
+              <input type="text" required class="mt-1 w-full rounded-xl border px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Nama lengkap" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm font-semibold">Email</label>
+                <input type="email" required class="mt-1 w-full rounded-xl border px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="email@domain.com" />
+              </div>
+              <div>
+                <label class="text-sm font-semibold">Telepon / WA</label>
+                <input type="tel" class="mt-1 w-full rounded-xl border px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="08xxxxxxxxxx" />
+              </div>
+            </div>
+            <div>
+              <label class="text-sm font-semibold">Produk yang diminati</label>
+              <select class="mt-1 w-full rounded-xl border px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                <option>Emping Original</option>
+                <option>Emping Balado</option>
+                <option>Keceprek Melinjo</option>
+                <option>Semua Produk</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-sm font-semibold">Pesan</label>
+              <textarea required rows="4" class="mt-1 w-full rounded-xl border px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Tulis kebutuhan Anda"></textarea>
+            </div>
+            <button class="rounded-2xl bg-primary-600 px-5 py-3 text-white font-semibold hover:bg-primary-700 transition-colors">Kirim Pesan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map (koordinat: 6°24'08.8"S 105°53'10.6"E  =>  -6.402444, 105.886278) -->
+  <div class="w-full h-80 bg-stone-200 overflow-hidden">
+    <iframe src="https://maps.google.com/maps?q=-6.402444,105.886278&z=16&hl=id&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-10 bg-secondary-900 text-white">
+    <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+      <p>© <span id="year"></span> Emping Srikandi. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#tentang" class="hover:text-primary-300 transition-colors">Tentang</a>
+        <a href="#produk" class="hover:text-primary-300 transition-colors">Produk</a>
+        <a href="#kontak" class="hover:text-primary-300 transition-colors">Kontak</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Alpine store untuk marketplace
+    function shop(){
+      return {
+        open: false,
+        product: '',
+        price: 0,
+        qty: 1,
+        note: '',
+        total: 0,
+        waBase: 'https://wa.me/628986771196',
+        recalc(){ this.total = Math.max(0, (this.price * (Number(this.qty)||0))); },
+        formatIDR(v){ return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(v||0); },
+        openModal(p, pr){ this.product=p; this.price=pr; this.qty=1; this.note=''; this.recalc(); this.open=true; },
+        checkout(){
+          if(!this.qty || this.qty<=0){ alert('Jumlah tidak valid'); return; }
+          const lines = [
+            '*Order Emping Srikandi*',
+            `Produk: ${this.product}`,
+            `Harga: ${this.formatIDR(this.price)}/kg`,
+            `Jumlah: ${this.qty} kg`,
+            `Estimasi total: ${this.formatIDR(this.total)} (belum termasuk ongkir)`,
+            this.note ? `Catatan: ${this.note}` : null,
+          ].filter(Boolean).join('\n');
+          const url = `${this.waBase}?text=${encodeURIComponent(lines)}`;
+          window.open(url, '_blank');
+          this.open = false;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
